@@ -1,0 +1,381 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+
+
+#root {
+  width: 100vw;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+:root {
+  /* Background */
+  --bg-color: #050816;
+  --secondary-bg: #0B1023;
+  --card-bg: #111827;
+
+  /* Text */
+  --text-color: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-muted: #6b7280;
+
+  /* font */
+  --heading: font-family: "Outfit", sans-serif;
+  --para: font-family: "Manrope", sans-serif;
+  --logofont: font-family: "Space Grotesk", sans-serif;
+
+  /* Primary */
+  --primary: #8B5CF6;
+  --primary-light: #A855F7;
+  --primary-dark: #6D28D9;
+
+  /* Border */
+  --border-color: #2d3748;
+
+  /* Button */
+  --btn-bg: #8B5CF6;
+  --btn-hover: #7C3AED;
+  --btn-text: #ffffff;
+
+  /* Shadow */
+
+  --shadow: 0 5px 5px rgba(139, 92, 246, 0.25),
+    inset 0 -5px 5px rgba(139, 92, 246, 0.25);
+
+
+  /* Radius */
+  --radius: 12px;
+
+  /* Transition */
+  --transition: all 0.3s ease;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 12px 24px;
+  border: 2px solid var(--primary-light);
+  border-radius: 10px;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--primary-light);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.btn:hover::before {
+  transform: scaleX(1);
+}
+
+.btn:hover {
+  color: #fff;
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* header */
+
+
+.navcontainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbox {
+  position: fixed;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 90%;
+  height: 65px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5%;
+
+  border: 0.8px solid var(--border-color);
+  border-radius: 30px;
+
+  background: var(--background-color, transparent);
+  /* Prevent content showing through */
+  z-index: 1000;
+  /* Keep it above other content */
+
+  li a {
+    color: var(--text-color);
+  }
+
+
+
+  .cv {
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    position: relative;
+    color: #fff;
+    border: 2px solid var(--primary-light);
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.3s ease;
+  }
+
+  .cv::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--primary-light);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    z-index: -1;
+  }
+
+  .cv:hover::before {
+    transform: scaleX(1);
+  }
+
+  .cv:hover {
+    color: #fff;
+  }
+
+}
+
+.Container,
+.about,
+.skills,
+.projects,
+.exp,
+.contact {
+  height: 100vh;
+  background-color: #08060d;
+}
+
+
+/* Main Section */
+.Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.container-lg {
+  display: flex;
+  flex-direction: row;
+  margin-top: 65px;
+
+  .intro {
+    padding-left: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  h1 {
+    margin-top: -12px;
+    margin-left: 7%;
+    font: var(--logofont);
+    color: var(--text-color);
+    font-size: 54px;
+    font-weight: 1000;
+  }
+
+  h2 {
+    margin-top: -22px;
+    margin-left: 7%;
+    color: var(--text-secondary);
+    font: var(--para);
+    font-size: 34px;
+    font-weight: 1000;
+  }
+
+  h3 {
+    font: var(--para);
+    color: var(--text-muted);
+    font-size: 34px;
+    font-weight: 1000;
+  }
+
+  p {
+    font: var(--para);
+    font-weight: 300;
+    color: var(--text-color);
+  }
+
+  span {
+    color: var(--primary-light);
+  }
+
+  .btnbox {
+    margin-top: 1%;
+    margin-left: 7%;
+    width: 80%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .Projectbtn,
+    .contactbtn {
+      height: 40px;
+      border: 1px solid var(--primary-light);
+    }
+  }
+
+  .social-media {
+    width: 68%;
+    height: 60px;
+    margin-left: 13%;
+    margin-top: 2%;
+    align-items: center;
+    justify-content: center;
+    border:1px solid var(--primary-light);
+    border-radius: 15px;
+    display: flex;
+    gap: 20px;
+  }
+
+  .icon {
+    font-size: 32px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .insta {
+    color: #E1306C;
+  }
+
+  .github {
+    color: black;
+  }
+
+  .linkedin {
+    color: #0077B5;
+  }
+
+  .twitter {
+    color: #1DA1F2;
+  }
+
+  .youtube {
+    color: red;
+  }
+
+  .icon:hover {
+    transform: scale(1.2);
+  }
+
+
+
+  /* hero */
+
+  .hero {
+
+    .img {
+      filter: brightness(1.1) contrast(1);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 70%;
+      height: 99%;
+      border-radius: 30px;
+      border: 1px solid rebeccapurple;
+
+      background-image: url("/src/assets/Hero.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+  }
+
+
+
+}
+
+.hero,
+.intro {
+  width: 50%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
