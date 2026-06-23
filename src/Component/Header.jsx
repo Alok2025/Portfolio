@@ -26,9 +26,6 @@ function Header() {
                     <li class="nav-item cv">
                         <a class="nav-link " aria-disabled="true">Download CV</a>
                     </li>
-                    <li class="nav-item cv" id="mode">
-                        <a class="nav-link " aria-disabled="true">dark</a>
-                    </li>
                 </ul>
             </div>
         </>
